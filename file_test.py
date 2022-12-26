@@ -17,10 +17,10 @@ def test_creat_zip():
 def test_zip():
     with zipfile.ZipFile('data/spam.zip', 'r') as myzip:
         assert len(myzip.namelist()) == 3  # проверка сколько файлов входтит в файл
-        assert 'data/simple_demo.pdf' in myzip
-        assert 'data/some.csv' in myzip
-        assert 'data/test_with_files.xlsx' in myzip
-    assert 'spam.zip' in 'data'
+        assert 'data/simple_demo.pdf' in myzip.namelist()
+        assert 'data/some.csv' in myzip.namelist()
+        assert 'data/test_with_files.xlsx' in myzip.namelist()
+
 
 def test_csv():
     # тут читаем csv файлы
